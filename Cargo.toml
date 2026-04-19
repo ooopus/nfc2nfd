@@ -1,0 +1,19 @@
+[package]
+name = "nfc2nfd"
+version = "0.1.0"
+edition = "2024"
+description = "Rename files from NFC to NFD so iOS UIDocumentPicker can select CJK-named files"
+license = "MIT"
+repository = "https://github.com/ooopus/nfc2nfd"
+keywords = ["unicode", "nfc", "nfd", "normalization", "rename"]
+categories = ["command-line-utilities", "filesystem"]
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }
+unicode-normalization = "0.1"
+walkdir = "2"
+
+[profile.release]
+lto = true
+codegen-units = 1
+strip = true
